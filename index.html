@@ -1,0 +1,247 @@
+
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <title> Word Game</title>
+    <style>
+        .dia {
+            padding: 2px;
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body style="background-color:rgba(208, 223, 231, 0.733);">
+    <div style="display: flex; justify-content: center; align-items: center; font-size: 20px;">
+        Word Game
+
+    </div><br>
+    <div style="display: flex; justify-content: center; align-items: center;">
+        Lifelines
+
+    </div>
+    <div style="display: flex; justify-content: center; align-items: center;">
+        <img id='img1' src='diamond2.jpg' width='60px' class='dia'>
+        <img id='img2' src='diamond2.jpg' width='60px' class='dia'>
+        <img id='img3' src='diamond2.jpg' width='60px' class='dia'>
+        <img id='img4' src='diamond2.jpg' width='60px' class='dia'>
+        <img id='img5' src='diamond2.jpg' width='60px' class='dia'>
+        <img id='img6' src='diamond2.jpg' width='60px' class='dia'>
+    </div>
+    <br>
+    <div style="display: flex; justify-content: center; align-items: center;">
+        <div>Points : </div>
+        <div id='point'>0</div>
+        
+    </div>
+    <br>
+    <!-- <div id='msg' style="display: flex; justify-content: center; align-items: center;">
+        
+    </div> -->
+    <!-- <div style="display: flex; justify-content: center; align-items: center;">
+        <div id="d1" style="padding: 20px; margin: 4px;background-color:#89ebebee">?</div>
+        <div id="d2" style="padding: 20px; margin: 4px;background-color:#89ebebee">?</div>
+        <div id="d3" style="padding: 20px; margin: 4px;background-color:#89ebebee">?</div>
+        <div id="d4" style="padding: 20px; margin: 4px;background-color:#89ebebee">?</div>
+        <div id="d5" style="padding: 20px; margin: 4px;background-color:#89ebebee">?</div>
+        <div id="d6" style="padding: 20px; margin: 4px;background-color:#89ebebee">?</div>
+        <div id="d7" style="padding: 20px; margin: 4px;background-color:#89ebebee">?</div>
+        <div id="d8" style="padding: 20px; margin: 4px;background-color:#89ebebee">?</div>
+    </div> -->
+    <br>
+    <div id='div2' style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+        Guess the word!
+    </div>
+    <div id='div3' style="display: flex; justify-content: center; align-items: center;">
+
+    </div>
+    <br>
+    <div style="display: flex; justify-content: center; align-items: center;">
+        Click on the below letters
+    </div>
+    <div id='key' style="display: flex; justify-content: center; align-items: center;">
+
+    </div>
+    <div style="display: flex; justify-content: center; align-items: center;">
+        <div id="q" style="padding: 10px; margin: 4px;background-color:#d1d8f5ee; width: 1%; height: 1%;">Q</div>
+        <div id="w" style="padding: 10px; margin: 4px;background-color:#d1d8f5ee; width: 1%; height: 1%;">W</div>
+        <div id="e" style="padding: 10px; margin: 4px;background-color:#d1d8f5ee; width: 1%; height: 1%;">E</div>
+        <div id="r" style="padding: 10px; margin: 4px;background-color:#d1d8f5ee; width: 1%; height: 1%;">R</div>
+        <div id="t" style="padding: 10px; margin: 4px;background-color:#d1d8f5ee; width: 1%; height: 1%;">T</div>
+        <div id="y" style="padding: 10px; margin: 4px;background-color:#d1d8f5ee; width: 1%; height: 1%;">Y</div>
+        <div id="u" style="padding: 10px; margin: 4px;background-color:#d1d8f5ee; width: 1%; height: 1%;">U</div>
+        <div id="i" style="padding: 10px; margin: 4px;background-color:#d1d8f5ee; width: 1%; height: 1%;">I</div>
+        <div id="o" style="padding: 10px; margin: 4px;background-color:#d1d8f5ee; width: 1%; height: 1%;">O</div>
+        <div id="p" style="padding: 10px; margin: 4px;background-color:#d1d8f5ee; width: 1%; height: 1%;">P</div>
+    </div>
+    <div style="display: flex; justify-content: center; align-items: center;">
+        <div id="a" style="padding: 10px; margin: 4px;background-color:#d1d8f5ee; width: 1%; height: 1%;">A</div>
+        <div id="s" style="padding: 10px; margin: 4px;background-color:#d1d8f5ee; width: 1%; height: 1%;">S</div>
+        <div id="d" style="padding: 10px; margin: 4px;background-color:#d1d8f5ee; width: 1%; height: 1%;">D</div>
+        <div id="f" style="padding: 10px; margin: 4px;background-color:#d1d8f5ee; width: 1%; height: 1%;">F</div>
+        <div id="g" style="padding: 10px; margin: 4px;background-color:#d1d8f5ee; width: 1%; height: 1%;">G</div>
+        <div id="h" style="padding: 10px; margin: 4px;background-color:#d1d8f5ee; width: 1%; height: 1%;">H</div>
+        <div id="j" style="padding: 10px; margin: 4px;background-color:#d1d8f5ee; width: 1%; height: 1%;">J</div>
+        <div id="k" style="padding: 10px; margin: 4px;background-color:#d1d8f5ee; width: 1%; height: 1%;">K</div>
+        <div id="l" style="padding: 10px; margin: 4px;background-color:#d1d8f5ee; width: 1%; height: 1%;">L</div>
+    </div>    
+    <div style="display: flex; justify-content: center; align-items: center;">
+        <div id="z" style="padding: 10px; margin: 4px;background-color:#d1d8f5ee; width: 1%; height: 1%;">Z</div>
+        <div id="x" style="padding: 10px; margin: 4px;background-color:#d1d8f5ee; width: 1%; height: 1%;">X</div>
+        <div id="c" style="padding: 10px; margin: 4px;background-color:#d1d8f5ee; width: 1%; height: 1%;">C</div>
+        <div id="v" style="padding: 10px; margin: 4px;background-color:#d1d8f5ee; width: 1%; height: 1%;">V</div>
+        <div id="b" style="padding: 10px; margin: 4px;background-color:#d1d8f5ee; width: 1%; height: 1%;">B</div>
+        <div id="n" style="padding: 10px; margin: 4px;background-color:#d1d8f5ee; width: 1%; height: 1%;">N</div>
+        <div id="m" style="padding: 10px; margin: 4px;background-color:#d1d8f5ee; width: 1%; height: 1%;">M</div>
+        
+    </div>
+    <br>
+    <div style="display: flex; justify-content: center; align-items: center;">
+        <button id='b1' style="height: 30px;">New Game</button><br><br>
+
+    </div>
+
+    <script>
+        // document.getElementById('d1').onclick = a1('d1');
+        // document.getElementById('d2').onclick = a1('d2');
+
+        pnt=0
+        life=0
+        document.getElementById('b1').onclick = d1;
+      
+        // msg=document.getElementById('msg')
+        ans1=document.getElementById('key')
+        pnt1=document.getElementById('point')
+
+        bgn()
+
+        function bgn() {
+            url='https://random-word-api.herokuapp.com/word?number=1'
+            fetch(url)
+            .then((resp) => resp.json())
+            .then((data) => {
+                disp(data)
+            })
+        }
+
+        function disp(data) {
+            data1=data[0].toUpperCase()
+            y=data[0].length
+            z=Math.floor(y/2)+1
+            cd=''
+            for (i=0; i<y; i++){
+                a=Math.random()
+                b=Math.round(a)
+                cd+=b
+            }
+            n=(cd.match(/0/g)||[]).length
+            // div2=document.getElementById('div2')
+            // div2.innerHTML=
+            // 'Word is: '+data1+'<br>Length is :'+y
+        //     +'<br>Len2 is :'+z+
+        //     '<br>Code is :'+cd+
+        //     '<br>No zeros is :'+n
+          
+            f1()
+
+            div3=document.getElementById('div3')
+            ans=[]
+            zpos=[]
+            for (i=1; i<=y; i++) {
+                let diva = document.createElement('DIV');
+                divid = 'diva'+i
+                diva.setAttribute('id',divid)
+                diva.style.padding='20px'
+                diva.style.margin='4px'
+                diva.style.backgroundColor='#89ebebee'
+                div3.appendChild(diva);
+                div3a=document.getElementById(divid)
+                cd1=cd.split('')
+                data2=data1.split('')
+                data3=[...data2]
+                data4=[...data2]
+                if (cd1[i-1]==0) {w='?'; ans.push(data2[i-1]); zpos.push(i-1)} else {w=data2[i-1]}
+                ans2=[...ans]
+                div3a.innerHTML=w
+                // msg.innerHTML=ans
+            }
+        }
+
+        function chk(key1) {
+            if (ans.includes(key1)) {
+                dpos1=data3.indexOf(key1)
+                dpos1a=dpos1+1
+                
+                divupid='diva'+dpos1a
+                divup=document.getElementById(divupid)
+                divup.style.backgroundColor='#9ea3f0ee'
+                divup.innerHTML=key1
+
+                pos=ans2.indexOf(key1)
+                console.log('zpos is: ',zpos)
+                console.log('pos is: ',pos)
+                pos2=zpos[pos]
+                console.log('pos2 is: ',pos2)
+                data3.splice(pos2,1,'2')
+                console.log('data3 is: ',data3)
+
+                pos3=ans.indexOf(key1)
+                ans.splice(pos3,1)
+                console.log('ans is: ',ans)
+                ans2.splice(pos,1,'2')
+                console.log('ans2 is: ',ans2)                
+                
+                pnt+=100
+                pnt1.innerHTML=pnt
+                alen=ans.length
+                // msg.innerHTML=ans
+                if (alen<1) {
+                    setTimeout(function(){ 
+                        alert('Correct Answer'); 
+                        location.reload()
+                    }, 200);
+                }
+            } else {
+                life+=1
+                img1='img'+life
+                img=document.getElementById(img1)
+                img.setAttribute('src','diacrs2.jpg')
+                ans1.innerHTML='Life is: '+(6-life)
+                if (life>5) {
+                    setTimeout(function(){ 
+                        alert('Game Over'); 
+                        location.reload()
+                    }, 200);
+                }
+            }
+        }
+
+        function f1() {
+            if (n<2 || n>z) {bgn()}
+        }
+
+        function d1() {
+            location.reload()
+        }
+
+        function a1(b) {
+            console.log('hello')
+        }
+
+        for (i=97; i<=122; i++) {
+            ky=String.fromCharCode(i)
+            ky2=ky.toUpperCase()
+            n2='n'+i
+            n=document.getElementById(ky)
+            chk2='chk("'+ky2+'")'
+            n.setAttribute('onclick', chk2) 
+            n.addEventListener('mouseover',function(){event.stopPropagation(); 
+            this.style.backgroundColor='#bcc4e5ee'})
+            n.addEventListener('mouseout',function(){event.stopPropagation(); 
+            this.style.backgroundColor='#d1d8f5ee'})
+        } 
+
+    </script>
+    
+</body>
+</html>
